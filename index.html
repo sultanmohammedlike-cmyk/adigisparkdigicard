@@ -23,9 +23,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--off-white);
@@ -35,7 +33,7 @@
     overflow-x: hidden;
   }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     background: linear-gradient(160deg, var(--sky-deep) 0%, var(--sky) 55%, var(--sky-mid) 100%);
     padding: 52px 28px 44px;
@@ -141,18 +139,22 @@
     text-transform: uppercase;
   }
 
-  /* ── WAVE ── */
+  /* WAVE IMAGE */
   .wave {
     display: block;
     width: 100%;
-    height: 44px;
-    background: var(--off-white);
+    line-height: 0;
     position: relative;
     top: -1px;
   }
-  .wave svg { display: block; }
+  .wave img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
 
-  /* ── SECTIONS ── */
+  /* SECTIONS */
   section { padding: 44px 22px; }
   .sec-label {
     display: inline-block;
@@ -174,12 +176,9 @@
     line-height: 1.2;
     margin-bottom: 24px;
   }
-  .sec-title em {
-    font-style: normal;
-    color: var(--sky-deep);
-  }
+  .sec-title em { font-style: normal; color: var(--sky-deep); }
 
-  /* ── SERVICES ── */
+  /* SERVICES */
   .services { background: var(--white); }
   .service-card {
     border: 1.5px solid var(--border);
@@ -202,94 +201,47 @@
     transition: opacity 0.2s;
   }
   .service-card:hover::before { opacity: 1; }
-  .s-top {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
+  .s-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
   .s-icon {
-    width: 48px;
-    height: 48px;
+    width: 48px; height: 48px;
     background: linear-gradient(135deg, var(--sky-soft), var(--sky-light));
     border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
   }
   .s-meta { flex: 1; }
   .s-num {
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--sky);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 3px;
+    font-size: 10px; font-weight: 700; color: var(--sky);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px;
   }
-  .s-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--text-dark);
-  }
-  .s-bullets {
-    list-style: none;
-    padding: 0;
-  }
+  .s-title { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text-dark); }
+  .s-bullets { list-style: none; padding: 0; }
   .s-bullets li {
-    font-size: 13px;
-    color: var(--text-mid);
+    font-size: 13px; color: var(--text-mid);
     padding: 5px 0 5px 18px;
     position: relative;
     border-top: 1px dashed var(--border);
     line-height: 1.4;
   }
-  .s-bullets li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--sky);
-    font-size: 12px;
-  }
+  .s-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--sky); font-size: 12px; }
 
-  /* ── GALLERY ── */
+  /* GALLERY */
   .gallery { background: var(--sky-soft); }
   .gallery-category { margin-bottom: 28px; }
   .gallery-cat-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-mid);
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    border-bottom: 1.5px solid var(--border);
+    font-size: 13px; font-weight: 600; color: var(--text-mid);
+    margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1.5px solid var(--border);
   }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
+  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .gallery-grid.single { grid-template-columns: 1fr; }
   .gal-item {
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    gap: 8px;
-    position: relative;
+    border-radius: var(--radius-sm); overflow: hidden; aspect-ratio: 4/3;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 30px; gap: 8px; position: relative;
   }
   .gal-item span.gal-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: #fff;
-    letter-spacing: 0.05em;
-    text-align: center;
-    padding: 0 8px;
+    font-size: 11px; font-weight: 600; color: #fff;
+    letter-spacing: 0.05em; text-align: center; padding: 0 8px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.3);
   }
   .g1 { background: linear-gradient(135deg,#0284C7,#38BDF8); }
@@ -299,7 +251,7 @@
   .g5 { background: linear-gradient(135deg,#38BDF8,#BAE6FD); }
   .g6 { background: linear-gradient(135deg,#0C4A6E,#0284C7); }
 
-  /* ── CLIENTS MARQUEE ── */
+  /* CLIENTS MARQUEE */
   .clients-section { background: var(--white); overflow: hidden; }
   .marquee-wrap {
     overflow: hidden;
@@ -307,8 +259,7 @@
     mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
   }
   .marquee-track {
-    display: flex;
-    gap: 14px;
+    display: flex; gap: 14px;
     animation: marquee 22s linear infinite;
     width: max-content;
   }
@@ -317,122 +268,54 @@
     to   { transform: translateX(-50%); }
   }
   .client-chip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--sky-soft);
-    border: 1.5px solid var(--border);
-    border-radius: 50px;
-    padding: 8px 16px;
-    white-space: nowrap;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-dark);
+    display: flex; align-items: center; gap: 8px;
+    background: var(--sky-soft); border: 1.5px solid var(--border);
+    border-radius: 50px; padding: 8px 16px;
+    white-space: nowrap; font-size: 13px; font-weight: 500; color: var(--text-dark);
   }
   .client-chip .ci { font-size: 17px; }
 
-  /* ── CONTACT ── */
+  /* CONTACT */
   .contact { background: var(--off-white); }
   .contact-cards { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
   .c-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 16px 18px;
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm); padding: 16px 18px;
   }
   .c-icon {
-    width: 42px;
-    height: 42px;
+    width: 42px; height: 42px;
     background: linear-gradient(135deg, var(--sky-soft), var(--sky-light));
     border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
   }
   .c-info { flex: 1; }
-  .c-type {
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--sky);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-  .c-val {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-dark);
-    text-decoration: none;
-    display: block;
-  }
-  .c-sub {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 1px;
-  }
+  .c-type { font-size: 10px; font-weight: 700; color: var(--sky); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
+  .c-val { font-size: 14px; font-weight: 500; color: var(--text-dark); text-decoration: none; display: block; }
+  .c-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
 
-  /* ── CTA BUTTONS ── */
-  .cta-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+  /* CTA BUTTONS */
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
   .cta-btn {
-    flex: 1;
-    min-width: 100px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 13px 18px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
+    flex: 1; min-width: 100px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 13px 18px; border-radius: 50px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
     transition: transform 0.15s, box-shadow 0.15s;
-    cursor: pointer;
-    border: none;
+    cursor: pointer; border: none;
   }
   .cta-btn:active { transform: scale(0.96); }
-  .cta-primary {
-    background: linear-gradient(135deg, var(--sky-deep), var(--sky));
-    color: #fff;
-    box-shadow: 0 4px 18px rgba(14,165,233,0.35);
-  }
-  .cta-wa {
-    background: #25D366;
-    color: #fff;
-    box-shadow: 0 4px 18px rgba(37,211,102,0.3);
-  }
-  .cta-outline {
-    background: var(--white);
-    border: 1.5px solid var(--sky);
-    color: var(--sky-deep);
-  }
+  .cta-primary { background: linear-gradient(135deg, var(--sky-deep), var(--sky)); color: #fff; box-shadow: 0 4px 18px rgba(14,165,233,0.35); }
+  .cta-wa { background: #25D366; color: #fff; box-shadow: 0 4px 18px rgba(37,211,102,0.3); }
+  .cta-outline { background: var(--white); border: 1.5px solid var(--sky); color: var(--sky-deep); }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--sky-deep);
-    color: rgba(255,255,255,0.7);
-    text-align: center;
-    padding: 18px 22px;
-    font-size: 12px;
-  }
+  /* FOOTER */
+  footer { background: var(--sky-deep); color: rgba(255,255,255,0.7); text-align: center; padding: 18px 22px; font-size: 12px; }
   footer strong { color: #fff; }
 
-  /* ── DIVIDER ── */
-  .divider {
-    width: 40px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--sky), var(--sky-mid));
-    border-radius: 4px;
-    margin-bottom: 16px;
-  }
+  /* DIVIDER */
+  .divider { width: 40px; height: 3px; background: linear-gradient(90deg, var(--sky), var(--sky-mid)); border-radius: 4px; margin-bottom: 16px; }
 
   /* animations */
   @keyframes fadeUp {
@@ -449,7 +332,7 @@
 </head>
 <body>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <header class="hero">
   <div class="hero-badge">⚡ ADIGISPARK</div>
   <div class="logo-wrap">
@@ -473,19 +356,16 @@
   </div>
 </header>
 
-<!-- wave break -->
+<!-- WAVE IMAGE — place IMG_0138.PNG in the same folder as this HTML file -->
 <div class="wave">
-  <img src="IMG_0138.PNG">
-    <path d="M0,0 C120,44 360,0 480,44 L480,0 Z" fill="#0284C7"/>
-  
+  <img src="IMG_0138.PNG" alt="ADIGISPARK Banner">
 </div>
 
-<!-- ── SERVICES ── -->
+<!-- SERVICES -->
 <section class="services">
   <span class="sec-label">What We Do</span>
   <h2 class="sec-title">Our <em>Digital</em> Services</h2>
   <div class="divider"></div>
-
 
   <div class="service-card">
     <div class="s-top">
@@ -518,8 +398,6 @@
       <li>Keyword Strategy & Competitor Analysis</li>
     </ul>
   </div>
-
-  
 
   <div class="service-card">
     <div class="s-top">
@@ -583,7 +461,7 @@
   </div>
 </section>
 
-<!-- ── WORK GALLERY ── -->
+<!-- WORK GALLERY -->
 <section class="gallery">
   <span class="sec-label">Our Work</span>
   <h2 class="sec-title">Campaign <em>Highlights</em></h2>
@@ -621,15 +499,14 @@
   </div>
 </section>
 
-<!-- ── CLIENTS ── -->
+<!-- CLIENTS -->
 <section class="clients-section">
   <span class="sec-label">Trusted By</span>
   <h2 class="sec-title">Our <em>Happy</em> Clients</h2>
   <div class="divider"></div>
+</section>
 
-
-
-<!-- ── CONTACT ── -->
+<!-- CONTACT -->
 <section class="contact">
   <span class="sec-label">Get In Touch</span>
   <h2 class="sec-title">Contact <em>Us</em></h2>
@@ -640,15 +517,15 @@
       <div class="c-icon">📞</div>
       <div class="c-info">
         <div class="c-type">Phone</div>
-        <a href="tel:+919876543210" class="c-val">+91 96631 43035</a>
-        <div class="c-sub">Abhishek B N— Founder</div>
+        <a href="tel:+919663143035" class="c-val">+91 96631 43035</a>
+        <div class="c-sub">Abhishek B N — Founder</div>
       </div>
     </div>
     <div class="c-card">
       <div class="c-icon">✉️</div>
       <div class="c-info">
         <div class="c-type">Email</div>
-        <a href="mailto:adigisparks@gmail" class="c-val">adigisparks@gmail.com</div>
+        <a href="mailto:adigisparks@gmail.com" class="c-val">adigisparks@gmail.com</a>
         <div class="c-sub">We reply within 2 hours</div>
       </div>
     </div>
@@ -671,13 +548,13 @@
   </div>
 
   <div class="cta-row">
-    <a href="tel:+91" class="cta-btn cta-primary">📞 Call Now</a>
-    <a href="https://wa.me/9196631 43035" class="cta-btn cta-wa">💬 WhatsApp</a>
+    <a href="tel:+919663143035" class="cta-btn cta-primary">📞 Call Now</a>
+    <a href="https://wa.me/919663143035" class="cta-btn cta-wa">💬 WhatsApp</a>
     <a href="mailto:adigisparks@gmail.com" class="cta-btn cta-outline">✉️ Email</a>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <strong>ADIGISPARK</strong> — Digital Marketing Agency<br>
    · © 2026 · All Rights Reserved
