@@ -63,28 +63,30 @@
     margin-bottom: 22px;
     backdrop-filter: blur(4px);
   }
+
+  /* LOGO IMAGE — replaces text logo */
   .logo-wrap {
-    width: 90px;
-    height: 90px;
-    background: #fff;
-    border-radius: 22px;
+    width: 110px;
+    height: 110px;
+    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
     position: relative;
     z-index: 1;
+    overflow: hidden;
+    background: #fff;
   }
-  .logo-inner {
-    font-family: 'Syne', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--sky-deep);
-    letter-spacing: -1px;
-    line-height: 1;
+  .logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
   }
-  .logo-inner span { color: var(--sky-mid); }
+
   .hero-tagline {
     font-family: 'Syne', sans-serif;
     font-size: 26px;
@@ -137,21 +139,6 @@
     opacity: 0.8;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-  }
-
-  /* WAVE IMAGE */
-  .wave {
-    display: block;
-    width: 100%;
-    line-height: 0;
-    position: relative;
-    top: -1px;
-  }
-  .wave img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
   }
 
   /* SECTIONS */
@@ -210,10 +197,7 @@
     font-size: 22px; flex-shrink: 0;
   }
   .s-meta { flex: 1; }
-  .s-num {
-    font-size: 10px; font-weight: 700; color: var(--sky);
-    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px;
-  }
+  .s-num { font-size: 10px; font-weight: 700; color: var(--sky); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
   .s-title { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--text-dark); }
   .s-bullets { list-style: none; padding: 0; }
   .s-bullets li {
@@ -228,10 +212,7 @@
   /* GALLERY */
   .gallery { background: var(--sky-soft); }
   .gallery-category { margin-bottom: 28px; }
-  .gallery-cat-title {
-    font-size: 13px; font-weight: 600; color: var(--text-mid);
-    margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1.5px solid var(--border);
-  }
+  .gallery-cat-title { font-size: 13px; font-weight: 600; color: var(--text-mid); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1.5px solid var(--border); }
   .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .gallery-grid.single { grid-template-columns: 1fr; }
   .gal-item {
@@ -258,11 +239,7 @@
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
     mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
   }
-  .marquee-track {
-    display: flex; gap: 14px;
-    animation: marquee 22s linear infinite;
-    width: max-content;
-  }
+  .marquee-track { display: flex; gap: 14px; animation: marquee 22s linear infinite; width: max-content; }
   @keyframes marquee {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
@@ -335,9 +312,12 @@
 <!-- HERO -->
 <header class="hero">
   <div class="hero-badge">⚡ ADIGISPARK</div>
+
+  <!-- YOUR IMAGE shown here in the hero -->
   <div class="logo-wrap">
-    <div class="logo-inner">ADI<span>GI</span></div>
+    <img src="IMG_0138.PNG" alt="ADIGISPARK Logo">
   </div>
+
   <h1 class="hero-tagline">YOUR Growth<br><em>our mission</em> Brands</h1>
   <p class="hero-sub">Your Digital Growth Partner — Strategy to Scale</p>
   <div class="stats-row">
@@ -355,11 +335,6 @@
     </div>
   </div>
 </header>
-
-<!-- WAVE IMAGE — place IMG_0138.PNG in the same folder as this HTML file -->
-<div class="wave">
-  <img src="IMG_0138.PNG" alt="ADIGISPARK Banner">
-</div>
 
 <!-- SERVICES -->
 <section class="services">
@@ -533,7 +508,7 @@
       <div class="c-icon">🌐</div>
       <div class="c-info">
         <div class="c-type">Website</div>
-        <a href="#" class="c-val">www.adigispark.in</a>
+        <a href="https://www.adigispark.in" target="_blank" rel="noopener noreferrer" class="c-val">www.adigispark.in</a>
         <div class="c-sub">Portfolio & Case Studies</div>
       </div>
     </div>
