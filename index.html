@@ -64,7 +64,7 @@
     backdrop-filter: blur(4px);
   }
 
-  /* LOGO IMAGE — replaces text logo */
+  /* LOGO IMAGE */
   .logo-wrap {
     width: 110px;
     height: 110px;
@@ -232,25 +232,71 @@
   .g5 { background: linear-gradient(135deg,#38BDF8,#BAE6FD); }
   .g6 { background: linear-gradient(135deg,#0C4A6E,#0284C7); }
 
-  /* CLIENTS MARQUEE */
-  .clients-section { background: var(--white); overflow: hidden; }
+  /* ── CLIENTS MARQUEE WITH IMAGES ── */
+  .clients-section {
+    background: var(--white);
+    overflow: hidden;
+    padding-bottom: 48px;
+  }
+
+  /* Row 1 — slides LEFT */
   .marquee-wrap {
     overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+    margin-bottom: 14px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
   }
-  .marquee-track { display: flex; gap: 14px; animation: marquee 22s linear infinite; width: max-content; }
-  @keyframes marquee {
+  .marquee-track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    animation: slideLeft 20s linear infinite;
+  }
+
+  /* Row 2 — slides RIGHT */
+  .marquee-wrap.reverse .marquee-track {
+    animation: slideRight 24s linear infinite;
+  }
+
+  @keyframes slideLeft {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
-  .client-chip {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--sky-soft); border: 1.5px solid var(--border);
-    border-radius: 50px; padding: 8px 16px;
-    white-space: nowrap; font-size: 13px; font-weight: 500; color: var(--text-dark);
+  @keyframes slideRight {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
   }
-  .client-chip .ci { font-size: 17px; }
+
+  /* Each client card */
+  .client-card {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    background: var(--sky-soft);
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(14,165,233,0.08);
+    transition: transform 0.2s;
+  }
+  .client-card:hover { transform: scale(1.05); }
+
+  /* Client image inside the card */
+  .client-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    display: block;
+  }
+
+  /* Pause marquee on hover */
+  .marquee-wrap:hover .marquee-track {
+    animation-play-state: paused;
+  }
 
   /* CONTACT */
   .contact { background: var(--off-white); }
@@ -313,7 +359,6 @@
 <header class="hero">
   <div class="hero-badge">⚡ ADIGISPARK</div>
 
-  <!-- YOUR IMAGE shown here in the hero -->
   <div class="logo-wrap">
     <img src="IMG_0138.PNG" alt="ADIGISPARK Logo">
   </div>
@@ -461,11 +506,52 @@
   </div>
 </section>
 
-<!-- CLIENTS -->
+<!-- ── CLIENTS — IMAGE MARQUEE ── -->
 <section class="clients-section">
   <span class="sec-label">Trusted By</span>
   <h2 class="sec-title">Our <em>Happy</em> Clients</h2>
   <div class="divider"></div>
+
+  <!-- ROW 1 → slides left -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- original set -->
+      <div class="client-card"><img src="client1.png"  alt="Client 1"></div>
+      <div class="client-card"><img src="client2.png"  alt="Client 2"></div>
+      <div class="client-card"><img src="client3.png"  alt="Client 3"></div>
+      <div class="client-card"><img src="client4.png"  alt="Client 4"></div>
+      <div class="client-card"><img src="client5.png"  alt="Client 5"></div>
+      <div class="client-card"><img src="client6.png"  alt="Client 6"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="client-card"><img src="client1.png"  alt="Client 1"></div>
+      <div class="client-card"><img src="client2.png"  alt="Client 2"></div>
+      <div class="client-card"><img src="client3.png"  alt="Client 3"></div>
+      <div class="client-card"><img src="client4.png"  alt="Client 4"></div>
+      <div class="client-card"><img src="client5.png"  alt="Client 5"></div>
+      <div class="client-card"><img src="client6.png"  alt="Client 6"></div>
+    </div>
+  </div>
+
+  <!-- ROW 2 → slides right -->
+  <div class="marquee-wrap reverse">
+    <div class="marquee-track">
+      <!-- original set -->
+      <div class="client-card"><img src="client7.png"  alt="Client 7"></div>
+      <div class="client-card"><img src="client8.png"  alt="Client 8"></div>
+      <div class="client-card"><img src="client9.png"  alt="Client 9"></div>
+      <div class="client-card"><img src="client10.png" alt="Client 10"></div>
+      <div class="client-card"><img src="client11.png" alt="Client 11"></div>
+      <div class="client-card"><img src="client12.png" alt="Client 12"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="client-card"><img src="client7.png"  alt="Client 7"></div>
+      <div class="client-card"><img src="client8.png"  alt="Client 8"></div>
+      <div class="client-card"><img src="client9.png"  alt="Client 9"></div>
+      <div class="client-card"><img src="client10.png" alt="Client 10"></div>
+      <div class="client-card"><img src="client11.png" alt="Client 11"></div>
+      <div class="client-card"><img src="client12.png" alt="Client 12"></div>
+    </div>
+  </div>
+
 </section>
 
 <!-- CONTACT -->
